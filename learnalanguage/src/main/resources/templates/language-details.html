@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails de la langue</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Détails de la langue</h1>
+
+<p>ID : <span th:text="${language.id}"></span></p>
+<p>Code : <span th:text="${language.code}"></span></p>
+<p>Nom : <span th:text="${language.name}"></span></p>
+
+<p>
+    <a th:href="@{/web/languages}">Retour à la liste</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des langues</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Liste des langues</h1>
+
+<ul>
+    <li th:each="lang : ${languages}">
+        <a th:href="@{/web/languages/{id}(id=${lang.id})}">
+            <span th:text="${lang.id}"></span>
+        </a>
+        -
+        <span th:text="${lang.code}"></span>
+        (<span th:text="${lang.name}"></span>)
+    </li>
+</ul>
+
+</body>
+</html>
