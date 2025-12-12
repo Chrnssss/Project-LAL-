@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Abonnements</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Abonnements</h1>
+
+<ul>
+    <li th:each="s : ${subscriptions}">
+        <a th:href="@{/web/subscriptions/{id}(id=${s.id})}">
+            <span th:text="${s.id}"></span>
+        </a>
+        - user: <span th:text="${s.user.email}"></span>
+        | list: <span th:text="${s.list.title}"></span>
+    </li>
+</ul>
+
+</body>
+</html>

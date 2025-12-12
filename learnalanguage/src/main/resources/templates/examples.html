@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Exemples</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Phrases d'exemple</h1>
+
+<ul>
+  <li th:each="e : ${examples}">
+    <a th:href="@{/web/examples/{id}(id=${e.id})}">
+      <span th:text="${e.id}"></span>
+    </a>
+    - <span th:text="${e.exampleText}"></span>
+    (flashcard: <span th:text="${e.translation.flashcard.front}"></span>,
+    langue: <span th:text="${e.translation.language.code}"></span>)
+  </li>
+</ul>
+
+</body>
+</html>

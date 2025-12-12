@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails abonnement</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Détails abonnement</h1>
+
+<p>ID: <span th:text="${subscription.id}"></span></p>
+
+<p>Utilisateur: <span th:text="${subscription.user.email}"></span>
+    (<span th:text="${subscription.user.role}"></span>)</p>
+
+<p>Liste: <span th:text="${subscription.list.title}"></span></p>
+<p>Langue: <span th:text="${subscription.list.language.code}"></span></p>
+
+<p><a th:href="@{/web/subscriptions}">Retour</a></p>
+
+</body>
+</html>

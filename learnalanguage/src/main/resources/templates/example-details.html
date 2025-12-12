@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails exemple</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Détails phrase d'exemple</h1>
+
+<p>ID: <span th:text="${example.id}"></span></p>
+
+<p>Phrase exemple: <span th:text="${example.exampleText}"></span></p>
+<p>Traduction: <span th:text="${example.exampleTranslation}"></span></p>
+
+<p>Flashcard: <span th:text="${example.translation.flashcard.front}"></span></p>
+<p>Liste: <span th:text="${example.translation.flashcard.list.title}"></span></p>
+<p>Langue (traduction): <span th:text="${example.translation.language.code}"></span></p>
+
+<p><a th:href="@{/web/examples}">Retour</a></p>
+
+</body>
+</html>

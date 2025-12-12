@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Utilisateurs</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Utilisateurs</h1>
+
+<ul>
+    <li th:each="u : ${users}">
+        <a th:href="@{/web/users/{id}(id=${u.id})}">
+            <span th:text="${u.id}"></span>
+        </a>
+        - <span th:text="${u.email}"></span>
+        (<span th:text="${u.role}"></span>)
+    </li>
+</ul>
+
+</body>
+</html>

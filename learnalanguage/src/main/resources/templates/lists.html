@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listes</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Listes</h1>
+
+<ul>
+    <li th:each="l : ${lists}">
+        <a th:href="@{/web/lists/{id}(id=${l.id})}">
+            <span th:text="${l.id}"></span>
+        </a>
+        - <span th:text="${l.title}"></span>
+        (langue: <span th:text="${l.language.code}"></span>)
+    </li>
+</ul>
+
+</body>
+</html>

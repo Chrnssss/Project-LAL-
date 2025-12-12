@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails favori</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Détails favori</h1>
+
+<p>ID: <span th:text="${favorite.id}"></span></p>
+<p>Utilisateur: <span th:text="${favorite.user.email}"></span></p>
+<p>Flashcard: <span th:text="${favorite.flashcard.front}"></span></p>
+<p>Liste: <span th:text="${favorite.flashcard.list.title}"></span></p>
+<p>Langue: <span th:text="${favorite.flashcard.list.language.code}"></span></p>
+
+<p><a th:href="@{/web/favorites}">Retour</a></p>
+
+</body>
+</html>

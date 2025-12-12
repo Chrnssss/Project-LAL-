@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails liste</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Détails liste</h1>
+
+<p>ID: <span th:text="${list.id}"></span></p>
+<p>Titre: <span th:text="${list.title}"></span></p>
+<p>Description: <span th:text="${list.description}"></span></p>
+<p>Publique: <span th:text="${list.isPublic}"></span></p>
+<p>Langue: <span th:text="${list.language.code}"></span> - <span th:text="${list.language.name}"></span></p>
+
+<p><a th:href="@{/web/lists}">Retour</a></p>
+
+</body>
+</html>

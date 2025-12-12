@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails traduction</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Détails traduction</h1>
+
+<p>ID: <span th:text="${translation.id}"></span></p>
+<p>Texte: <span th:text="${translation.text}"></span></p>
+
+<p>Flashcard: <span th:text="${translation.flashcard.front}"></span></p>
+<p>Liste: <span th:text="${translation.flashcard.list.title}"></span></p>
+
+<p>Langue (traduction): <span th:text="${translation.language.code}"></span> - <span th:text="${translation.language.name}"></span></p>
+
+<p><a th:href="@{/web/translations}">Retour</a></p>
+
+</body>
+</html>

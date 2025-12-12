@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Flashcards</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Flashcards</h1>
+
+<ul>
+    <li th:each="f : ${flashcards}">
+        <a th:href="@{/web/flashcards/{id}(id=${f.id})}">
+            <span th:text="${f.id}"></span>
+        </a>
+        - <span th:text="${f.front}"></span>
+        (liste: <span th:text="${f.list.title}"></span>)
+    </li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails flashcard</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Détails flashcard</h1>
+
+<p>ID: <span th:text="${flashcard.id}"></span></p>
+<p>Front: <span th:text="${flashcard.front}"></span></p>
+<p>Liste: <span th:text="${flashcard.list.title}"></span></p>
+<p>Langue: <span th:text="${flashcard.list.language.code}"></span></p>
+
+<p><a th:href="@{/web/flashcards}">Retour</a></p>
+
+</body>
+</html>

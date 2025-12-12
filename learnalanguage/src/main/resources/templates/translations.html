@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Traductions</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Traductions</h1>
+
+<ul>
+    <li th:each="t : ${translations}">
+        <a th:href="@{/web/translations/{id}(id=${t.id})}">
+            <span th:text="${t.id}"></span>
+        </a>
+        - <span th:text="${t.text}"></span>
+        (flashcard: <span th:text="${t.flashcard.front}"></span>,
+        langue: <span th:text="${t.language.code}"></span>)
+    </li>
+</ul>
+
+</body>
+</html>

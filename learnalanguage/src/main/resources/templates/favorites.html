@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Favoris</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Favoris</h1>
+
+<ul>
+    <li th:each="f : ${favorites}">
+        <a th:href="@{/web/favorites/{id}(id=${f.id})}">
+            <span th:text="${f.id}"></span>
+        </a>
+        - user: <span th:text="${f.user.email}"></span>
+        | flashcard: <span th:text="${f.flashcard.front}"></span>
+        (liste: <span th:text="${f.flashcard.list.title}"></span>)
+    </li>
+</ul>
+
+</body>
+</html>
