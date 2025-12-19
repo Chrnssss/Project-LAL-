@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Notifications</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Notifications</h1>
+
+<ul>
+    <li th:each="n : ${notifications}">
+        <a th:href="@{/web/notifications/{id}(id=${n.id})}">
+            <span th:text="${n.id}"></span>
+        </a>
+        - <span th:text="${n.title}"></span>
+        (user: <span th:text="${n.user.email}"></span>,
+        lu: <span th:text="${n.isRead}"></span>)
+    </li>
+</ul>
+
+</body>
+</html>
