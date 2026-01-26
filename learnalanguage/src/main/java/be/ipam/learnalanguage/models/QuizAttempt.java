@@ -8,31 +8,32 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "app_user")
+@Table(name = "quiz_attempt")
 @Getter
 @Setter
 @NoArgsConstructor
-public class AppUser {
+public class QuizAttempt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 255)
-    private String email;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private AppUser user;
 
-    @Column(name = "password_hash", nullable = false, length = 255)
-    private String passwordHash;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "list_id", nullable = false)
+    private VocabularyList list;
 
-    @Column(name = "first_name", nullable = false, length = 100)
-    private String firstName;
+    @Column(name = "total_questions", nullable = false)
+    private int totalQuestions;
 
-    @Column(name = "last_name", nullable = false, length = 100)
-    private String lastName;
+    @Column(name = "correct_answers", nullable = false)
+    private int correctAnswers;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 30)
-    private UserRole role;
+    @Column(name = "score_percent", nullable = false)
+    private int scorePercent;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -42,7 +43,5 @@ public class AppUser {
         if (this.createdAt == null) {
             this.createdAt = LocalDateTime.now();
         }
-
     }
-
 }
